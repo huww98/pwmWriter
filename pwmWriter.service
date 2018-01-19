@@ -1,0 +1,9 @@
+[Unit]
+Description=Daemon for PWM control of the Raspberry Pi GPIO pins
+
+[Service]
+User=root
+ExecStart=/usr/sbin/pwmWriter 13 18
+
+[Install]
+WantedBy=multi-user.target
