@@ -6,6 +6,7 @@ clean:
 
 reload-service: pwmWriter.service
 	systemctl daemon-reload
+	systemctl restart pwmWriter.service
 
 install: pwmWriter
 	cp pwmWriter /usr/sbin/pwmWriter
