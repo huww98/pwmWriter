@@ -12,8 +12,11 @@
 #include <fstream>
 #include <vector>
 #include <iostream>
+#include <chrono>
+#include <thread>
 
 using namespace std;
+using namespace std::chrono_literals;
 
 const char* gpioDevPath = "/dev/gpiopwm";
 
@@ -51,6 +54,7 @@ void* writePwm(void* data)
 
 int main(int argc, char** argv)
 {
+    this_thread::sleep_for(30s); // I don't know why..
     umask(0);
     if(mkdir(gpioDevPath,0755) == -1 && errno != EEXIST)
     {
